@@ -6,7 +6,21 @@
       <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
     </encoder>
   </appender>
-
+  <appender name="ASYNCSTDOUT" class="ch.qos.logback.classic.AsyncAppender">
+    <appender-ref ref="STDOUT"/>
+  </appender>
+  <logger name="play" level="INFO"/>
+  <logger name="application" level="DEBUG"/>
+  <!-- Off these ones as they are annoying, and anyway we manage configuration ourself -->
+  <!--<logger name="com.avaje.ebean.config.PropertyMapLoader" level="OFF"/>-->
+  <!--<logger name="com.avaje.ebeaninternal.server.core.XmlConfigLoader" level="OFF"/>-->
+  <!--<logger name="com.avaje.ebeaninternal.server.lib.BackgroundThread" level="OFF"/>-->
+  <!--<logger name="com.gargoylesoftware.htmlunit.javascript" level="OFF"/>-->
+  <logger name="slick.jdbc.JdbcBackend.statement" level="DEBUG"/>
+  <logger name="com.mysql.jdbc.MysqlDataTruncation" level="DEBUG"/>
+  <!--<logger name="act" level="DEBUG"/>-->
+  <!--<logger name="http" level="DEBUG"/>-->
+  <logger name="com.zaxxer.hikari" level="DEBUG"/>
   <root level="info">
     <appender-ref ref="STDOUT" />
   </root>

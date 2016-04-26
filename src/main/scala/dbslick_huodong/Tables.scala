@@ -67,8 +67,7 @@ trait Tables {
     val servantword: Rep[Option[String]] = column[Option[String]]("Servantword", O.Length(32,varying=true), O.Default(None))
     /** Database column matchid SqlType(INT), Default(None) */
     val matchid: Rep[Option[Int]] = column[Option[Int]]("matchid", O.Default(None))
-
   }
-      /** Collection-like TableQuery object for table Person */
+  /** Collection-like TableQuery object for table Person */
   lazy val Person = new TableQuery(tag => new Person(tag))
 }
